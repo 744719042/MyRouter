@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.example.routerapi.RouterManager;
+import com.example.routerapi.RouterRequest;
 import com.example.routerbase.annotation.Router;
 
 import java.io.IOException;
@@ -24,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void gotoMain(View view) {
-
+        RouterRequest request = new RouterRequest.Builder("/home/index").withActivity(this).build();
+        RouterManager.getInstance().navigate(request);
     }
 
     public void printDexFile(View view) {

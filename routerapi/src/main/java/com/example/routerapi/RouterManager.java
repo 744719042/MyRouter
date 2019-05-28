@@ -123,8 +123,4 @@ public class RouterManager {
 
         return map.get(path);
     }
-
-    public Object navigate(Class<?> clazz) {
-        return null;
-    }
 }

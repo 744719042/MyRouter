@@ -22,7 +22,7 @@ public class DispatchFilter implements Filter {
                     return RouterDispatcherHelper.dispatchFragment(request);
             }
         } else {
-            RouterUtils.notifyRouterFailure(callback);
+            RouterUtils.notifyRouterFailure(callback, new IllegalArgumentException("Error Router Type"));
         }
 
         return null;

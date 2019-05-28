@@ -26,7 +26,7 @@ public class RouterRequest {
         this.mRequestCode = requestCode;
         this.mExtra = extra;
         this.mActivity = new WeakReference<>(activity);
-        this.mContext = context.getApplicationContext();
+        this.mContext = context == null ? null : context.getApplicationContext();
         this.mCallback = callback;
     }
 

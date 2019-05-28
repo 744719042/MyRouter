@@ -13,7 +13,7 @@ public class FilterChain {
     public FilterChain(RouterRequest request, List<Filter> filters) {
         mFilters.clear();
         this.mFilters.addAll(filters);
-        this.mIndex = 0;
+        this.mIndex = -1;
         this.mRequest = request;
     }
 

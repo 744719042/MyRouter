@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.routerapi.RouterManager;
+import com.example.routerapi.RouterRequest;
 import com.example.routerbase.annotation.Router;
 
 
@@ -17,5 +19,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void gotoLogin(View view) {
+        RouterRequest request = new RouterRequest.Builder("/login/index").withActivity(this).build();
+        RouterManager.getInstance().navigate(request);
     }
 }

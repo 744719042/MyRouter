@@ -18,7 +18,8 @@ public class RequestInitFilter implements Filter {
             if (callback != null) {
                 callback.onLost(null);
             } else {
-                ErrorHandler handler = (ErrorHandler) RouterManager.getInstance().navigate(ErrorHandler.class);
+                RouterRequest errorRequest = new RouterRequest.Builder("/error/handler").build();
+                ErrorHandler handler = (ErrorHandler) RouterManager.getInstance().navigate(errorRequest);
                 if (handler != null) {
                     handler.onError(-1);
                 }
